@@ -73,14 +73,14 @@ def publish_mock_requests_forever():
                 request_id = str(uuid.uuid4())
 
                 # Example values for border size and color
-                bSize = random.randint(1, 10)  # Randomly choose border size between 1 and 10
-                bColor = "#{:06x}".format(random.randint(0, 0xFFFFFF))  # Generate a random hex color
+                configValue = random.randint(1, 10)  # Randomly choose border size between 1 and 10
+                configColor = "#{:06x}".format(random.randint(0, 0xFFFFFF))  # Generate a random hex color
 
                 border_parameters = {
                     "inputImageURI": os.path.join(PICTURAS_SRC_FOLDER, file_name),
                     "outputImageURI": os.path.join(PICTURAS_OUT_FOLDER, file_name),
-                    "bSize": bSize,
-                    "bColor": bColor,
+                    "configValue": configValue,
+                    "configColor": configColor,
                 }
 
                 publish_request_message(channel, "requests.border", request_id, "border", border_parameters)
